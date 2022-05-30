@@ -1,0 +1,39 @@
+﻿@page "/settings"
+<h3>Settings</h3>
+
+<EditForm Model="@SettingsViewModel" class="row p-3" OnSubmit="@SaveSettings">
+    <div class="col-md-12 mb-3">
+        <label for="Name">Name</label>
+        <InputText id="Name" @bind-Value="SettingsViewModel.Name" class="form-control" />
+    </div>
+
+    <div class="col-md-12 mb-3">
+        <label for="Name">Visit Counter</label>
+        <InputNumber id="Settings Page Visit Counter" disabled @bind-Value="SettingsViewModel.SettingsPageVisitCounter" class="form-control" />
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <label for="LastVisitedDate">Last Visited Date</label>
+        <InputDate id="Settings Page Last Visit Date" disabled @bind-Value="SettingsViewModel.SettingsPageLastVisitDate" class="form-control" />
+    </div>
+
+    <div class="form-check">
+        <InputCheckbox id="ReceiveNotifications" @bind-Value="SettingsViewModel.ReceiveNotifications" class="form-check-input" />
+        <label class="form-check-label" for="ReceiveNotifications">
+            Receive Notifications
+        </label>
+    </div>
+
+    <hr />
+
+    <div class="col-12 mb-3">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+
+    <hr />
+
+    <div class="col-md-12 mb-3">
+        <label for="Logs">Logs</label>
+        <InputTextArea id="Logs" disabled rows="20" cols="40" @bind-Value="SettingsViewModel.Logs" class="form-control" style="white-space:pre-line;" />
+    </div>
+</EditForm>
