@@ -15,13 +15,13 @@
 
 ## Introduction
 
-In this episode, we are going to build a basic Blazor WebAssembly App using Visual Studio 2022 Preview. The application will have a demo "Settings" screen, and the data will be stored locally in an in-browser SQLite database.
+In this episode, we are going to build a basic Blazor WebAssembly App using Visual Studio 2022 Preview. The application will have a basic "Settings" page, and the data will be stored locally in an in-browser SQLite database.
 
-In order to add SQLite we will add a NuGet package reference to `Microsoft.EntityFrameworkCore.Sqlite`. We are going to use Entity Framework Core (EF Core) for our object-relational mapping (ORM,) taking advantage of Code First approach to create and update the database schema, by adding a NuGet package reference to `Microsoft.EntityFrameworkCore`.
+In order to add SQLite we will add a NuGet package reference to `Microsoft.EntityFrameworkCore.Sqlite`. We are going to use Entity Framework Core (EF Core) for our object-relational mapping (ORM,) taking advantage of Code-First approach to create and update the database schema, by adding a NuGet package reference to `Microsoft.EntityFrameworkCore`.
 
 Then, we are going to download and install `emscripten` to be able to compile the SQLite C source code, and use the .NET WebAssembly build tools, to link the output of the build to WebAssembly so we can use SQLite from our Blazor WebAssembly application.
 
-At the end, you should end-up with a sample app that stores application settings data locally.
+At the end, you should end-up with a sample app that stores application settings data locally in an in-browser SQLite database.
 
 The demo app will look like this:
 
@@ -183,7 +183,7 @@ namespace BlazorAndSQLite
 
 In this section, we are going to add SQLite to our Blazor WebAssembly application.
 
-In order to do that, we need to tell our application builder, that we want to use SQLite, so we will need to add a DbContextFactory service by calling `AddDbContextFactory` in the `builder.Services` in our `Program.cs` file, and pass our ApplicationDbContext.
+In order to do that, we need to tell our application builder, that we want to use SQLite, so we will need to add a DbContextFactory service by calling `AddDbContextFactory` in the `builder.Services` in our `Program.cs` file, and pass our `ApplicationDbContext`.
 
 But first, we need NuGet package references to `Microsoft.EntityFrameworkCore`, and `Microsoft.EntityFrameworkCore.Sqlite`. So, let's add those up.
 
